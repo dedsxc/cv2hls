@@ -1,5 +1,5 @@
 #include <unistd.h>
-#include <stdio.h>
+
 #include "opencv/cvToHls.hpp"
 
 const cv::String keys =
