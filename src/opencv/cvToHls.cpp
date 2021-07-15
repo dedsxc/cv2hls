@@ -34,14 +34,8 @@ void CvToHls::process(void)
     }
 
     // Run
-    while (waitKey(1) < 0)
+    while (video.read(frame))
     {
-        video.read(frame);
-        if (frame.empty())
-        {
-            waitKey(timeout);
-        }
-
         // Display frame
         imshow(uri, frame);
 
