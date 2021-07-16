@@ -24,7 +24,6 @@ AVFormatContext *set_context(const int fps, const char *filename, const int fram
     * and initialize the codecs. 
     * Add stream
     */
-    // const AVCodec *vcodec = avcodec_find_encoder(oc->oformat->video_codec);
     const AVCodec *vcodec = avcodec_find_encoder_by_name(videoCodec);
     ost->st = avformat_new_stream(oc, vcodec);
     ost->st->id = oc->nb_streams - 1;
