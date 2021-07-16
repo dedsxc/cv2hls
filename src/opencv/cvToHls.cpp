@@ -8,7 +8,6 @@ CvToHls::CvToHls(const String id, const String uri, const int fps, const char *v
     this->uri = uri;
     this->fps = fps;
     this->video_codec = video_codec;
-    timeout = 3000;
 
     //  ffmpeg
     filename = "hls/stream.m3u8";
@@ -30,14 +29,8 @@ void CvToHls::process(void)
     CvToHls::setContextFFmpeg(filename, video_codec);
 
     // Run
-    while (waitKey(1) < 0)
+    while (video.read(frame))
     {
-        video.read(frame);
-        if (frame.empty())
-        {
-            waitKey(timeout);
-        }
-
         // Display frame
         imshow(uri, frame);
 
