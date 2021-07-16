@@ -32,6 +32,7 @@ typedef struct OutputStream
 } OutputStream;
 
 void close_stream(AVFormatContext *oc, OutputStream *ost);
+AVFormatContext *set_context(const int fps, const char *filename, const int frameWidth, const int frameHeight, const char* videoCodec, OutputStream *ost, AVFormatContext *ctx, const AVOutputFormat *fmt);
 int write_frame(AVFormatContext *oc, OutputStream *ost);
 
 #endif
