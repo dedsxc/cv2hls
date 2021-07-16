@@ -67,7 +67,7 @@ void CvToHls::setContextFFmpeg(const char *filename, const char *video_codec)
               << "target  : " << uri << "\n"
               << "outfile : " << filename << "\n"
               << "format  : " << oc->oformat->name << "\n"
-              << "vcodec  : " << avcodec_get_name(oc->oformat->video_codec) << "\n"
+              << "vcodec  : " << avcodec_get_name(video_st.enc->codec_id) << "\n"
               << "size    : " << frameWidth << 'x' << frameHeight << "\n"
               << "fps     : " << fps << "\n"
               << "-----------------------"
