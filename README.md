@@ -17,6 +17,9 @@ make
 
 ```sh
 ./cv2hls --target=rtsp://user:pass@ip --fps=15
+
+# Specify codec to use
+./cv2hls --target=rtsp://user:pass@ip --fps=15 --codec=libx264
 ```
 The HLS output will be generated in hls/stream.m3u8
 
