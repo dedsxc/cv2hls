@@ -29,8 +29,12 @@ void CvToHls::process(void)
     CvToHls::setContextFFmpeg(filename, video_codec);
 
     // Run
-    while (video.read(frame))
+    while (waitKey(1) < 0)
     {
+        if (!video.read(frame)){
+            std::cout << "[-] Error during reading frame" << std::endl;
+            abort();
+        }
         // Display frame
         imshow(uri, frame);
 
